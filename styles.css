@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #efefef;
+  background-color: #8fa2f8;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -20,11 +20,11 @@ body {
 
 .order, .payment {
   flex: 1;
-  min-width: 300px; /* Ensures responsiveness */
+  min-width: 300px; 
 }
 
 .total {
-  width: 100%; /* Makes the total row span full width */
+  width: 100%; 
 }
 
 
@@ -54,7 +54,7 @@ body {
 }
 
 .box-title {
-  color: #885a2d;
+  color: #43281c;
   font-weight: normal;
   font-size: 16px;
 }
@@ -72,6 +72,7 @@ body {
 }
 
 .items {
+  box-shadow: #43281c;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -178,10 +179,60 @@ body {
 }
 
 .checkout {
-  background-color: #deb993;
+  background-color: #fe9935;
   border: none;
   padding: 10px 30px;
   width: 100%;
   border-radius: 100px;
   font-size: 16px;
+}
+/* Scroll container styling */
+#scroll-container {
+  /* border: 3px solid black; */
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  height: 50px; /* Adjust height as needed */
+  /* background-color: white; Background color for contrast */
+}
+
+/* Right to Left scrolling (Top) */
+#scroll-text {
+  white-space: nowrap;
+  position: absolute;
+  width: 100%;
+  transform: translateX(100%);
+  
+  animation: scroll-left 15s linear infinite;
+}
+
+/* Left to Right scrolling (Bottom) */
+#scroll-text-bottom {
+  white-space: nowrap;
+  position: absolute;
+  width: 100%;
+  transform: translateX(-100%);
+  
+  animation: scroll-right 15s linear infinite;
+}
+
+/* Right to Left Animation (Top) */
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Left to Right Animation (Bottom) */
+@keyframes scroll-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
